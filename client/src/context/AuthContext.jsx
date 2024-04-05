@@ -1,6 +1,5 @@
 import { createContext, useState, useContext, useEffect} from "react";
 import { registerRequest, loginRequest, verifyTokenRequest, logoutToken, getRoleRequest } from "../api/auth";
-// import { getDepartaments } from "../api/departments";
 import Cookies from 'js-cookie'
 import {jwtDecode} from 'jwt-decode'
 

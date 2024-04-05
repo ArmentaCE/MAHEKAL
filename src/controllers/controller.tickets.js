@@ -46,10 +46,10 @@ export const addNewTicketPost = async (req, res) => {
     const userFound = await User.findById(req.user.id);
     const departmentFound = await Department.findById(assignedDepartment);
     if (!departmentFound)
-      return res.status(404).json({ message: "Departament not found" });
-
-    let dateInMiliseconds = Date.now();
-
+    return res.status(404).json({ message: "Departament not found" });
+  
+  let dateInMiliseconds = Date.now();
+  
     const newTicket = new Ticket({
       name: userFound.name + " " + userFound.lastname,
       date: dateInMiliseconds,
@@ -59,7 +59,7 @@ export const addNewTicketPost = async (req, res) => {
       assignedDepartment: departmentFound._id,
       roomOrArea: roomOrArea,
       description: description,
-      ticketNumber: generateTicketNumber()
+      ticketNumber: generateTicketNumber(),
       // imageURL: imageURL,
     });
 
