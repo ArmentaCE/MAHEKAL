@@ -596,7 +596,7 @@ export const getAllTicketsResolve = async (req, res) => {
 export const getAllTicketsOnPauseOrReview = async (req, res) => {
   try {
     const roleFound = await Roles.findById(req.user.role);
-
+    
     switch (roleFound.name) {
       case "Administrador":
       case "Gerente Administrador":
